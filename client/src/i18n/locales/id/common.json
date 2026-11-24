@@ -1,0 +1,57 @@
+{
+  "appName": "Sales Pulse",
+  "skipToContent": "Lewati ke konten",
+  "language": {
+    "label": "Bahasa",
+    "switch": "Ganti bahasa",
+    "id": "Bahasa Indonesia",
+    "en": "English",
+    "short": {
+      "id": "ID",
+      "en": "EN"
+    }
+  },
+  "actions": {
+    "settings": "Pengaturan",
+    "retry": "Coba lagi",
+    "close": "Tutup",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "back": "Kembali",
+    "next": "Lanjut",
+    "confirm": "Konfirmasi",
+    "copy": "Salin",
+    "copied": "Tersalin",
+    "clearFilters": "Hapus filter"
+  },
+  "status": {
+    "loading": "Memuat...",
+    "loadingApp": "Memuat Sales Pulse...",
+    "loadingChart": "Memuat grafik...",
+    "retrying": "Mencoba lagi..."
+  },
+  "empty": {
+    "title": "Belum ada data",
+    "filteredTitle": "Tidak ada penjualan untuk filter ini",
+    "filteredBody": "Longgarkan filter atau pilih rentang tanggal lain."
+  },
+  "error": {
+    "title": "Gagal memuat",
+    "generic": "Terjadi kesalahan. Coba lagi sebentar lagi.",
+    "network": "Server Sales Pulse tidak terjangkau. Pastikan aplikasi masih berjalan di komputer ini, lalu coba lagi.",
+    "appStateTitle": "Sales Pulse belum bisa dibuka",
+    "chart": "Grafik ini gagal dimuat.",
+    "languageNotSaved": "Bahasa sudah berganti di layar ini, tetapi belum tersimpan. Pilihan ini bisa kembali setelah halaman dimuat ulang."
+  },
+  "delta": {
+    "up": "Naik",
+    "down": "Turun",
+    "flat": "Tetap",
+    "noBaseline": "Belum ada pembanding",
+    "vs": "vs {{period}}"
+  },
+  "period": {
+    "label": "Periode data",
+    "none": "Belum ada data"
+  }
+}

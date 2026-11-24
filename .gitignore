@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.local-data/
+test-results/
+playwright-report/
+*.log
+.env
+.env.*
+.DS_Store
+# Local agent tooling and permissions; not part of the app.
+.claude/

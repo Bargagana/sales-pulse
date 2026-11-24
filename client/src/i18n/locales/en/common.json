@@ -1,0 +1,57 @@
+{
+  "appName": "Sales Pulse",
+  "skipToContent": "Skip to content",
+  "language": {
+    "label": "Language",
+    "switch": "Change language",
+    "id": "Bahasa Indonesia",
+    "en": "English",
+    "short": {
+      "id": "ID",
+      "en": "EN"
+    }
+  },
+  "actions": {
+    "settings": "Settings",
+    "retry": "Try again",
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save",
+    "back": "Back",
+    "next": "Next",
+    "confirm": "Confirm",
+    "copy": "Copy",
+    "copied": "Copied",
+    "clearFilters": "Clear filters"
+  },
+  "status": {
+    "loading": "Loading...",
+    "loadingApp": "Loading Sales Pulse...",
+    "loadingChart": "Loading chart...",
+    "retrying": "Trying again..."
+  },
+  "empty": {
+    "title": "No data yet",
+    "filteredTitle": "No sales match these filters",
+    "filteredBody": "Loosen a filter or pick another date range."
+  },
+  "error": {
+    "title": "Could not load",
+    "generic": "Something went wrong. Try again in a moment.",
+    "network": "Cannot reach the Sales Pulse server. Check that the app is still running on this computer, then try again.",
+    "appStateTitle": "Sales Pulse could not start",
+    "chart": "This chart could not be loaded.",
+    "languageNotSaved": "The language changed on this screen but was not saved. It may switch back after a reload."
+  },
+  "delta": {
+    "up": "Up",
+    "down": "Down",
+    "flat": "No change",
+    "noBaseline": "No comparison yet",
+    "vs": "vs {{period}}"
+  },
+  "period": {
+    "label": "Data period",
+    "none": "No data yet"
+  }
+}

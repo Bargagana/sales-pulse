@@ -1,0 +1,201 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+ * Sales Pulse design tokens. Light mode only (PRD non-goal: dark mode).
+ * Every text/background pair below was checked against WCAG AA; the ratios are in DESIGN.md.
+ * Chart colours live in client/src/theme/tokens.ts; theme/tokens.test.ts keeps the shared values in sync.
+ */
+
+/* No `.dark` class is ever set, so any `dark:` utility is inert, even when the OS is in dark mode
+   (Tailwind's default `dark:` would follow prefers-color-scheme). */
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  color-scheme: light;
+  --radius: 0.5rem;
+
+  /* Warm-neutral page plane with white cards: cards separate by tone and a hairline, not by shadow. */
+  --background: #f6f6f3;
+  --foreground: #191917;
+  --card: #ffffff;
+  --card-foreground: #191917;
+  --popover: #ffffff;
+  --popover-foreground: #191917;
+
+  /* The one accent: deep teal. Used for primary actions, focus and the selected state only. */
+  --primary: #0e6660;
+  --primary-foreground: #ffffff;
+  --primary-soft: #e3f0ee;
+
+  --secondary: #efeee9;
+  --secondary-foreground: #191917;
+  --muted: #efeee9;
+  --muted-foreground: #5d5c57;
+  /* shadcn's "accent" is the hover/active wash, not the brand accent. */
+  --accent: #ecebe5;
+  --accent-foreground: #191917;
+
+  --destructive: #c22f2a;
+  --border: #e2e1db;
+  /* Input borders are darker than card hairlines: 3.3:1 on white so the field edge is findable (WCAG 1.4.11). */
+  --input: #8f8d86;
+  --ring: #0e6660;
+
+  /* Delta text: used with an arrow and a sign, never as the only signal. */
+  --positive: #146b34;
+  --positive-soft: #e6f2e9;
+  --negative: #b3261e;
+  --negative-soft: #fbeae8;
+
+  /* Categorical chart palette, fixed order (see theme/tokens.ts). */
+  --chart-1: #2a78d6;
+  --chart-2: #eb6834;
+  --chart-3: #1baf7a;
+  --chart-4: #eda100;
+  --chart-5: #e87ba4;
+  --chart-6: #008300;
+  --chart-7: #6250d6;
+  --chart-8: #e34948;
+
+  /* Native UI font on every platform: SF on the reviewers' Macs, Roboto on the managers' Android phones.
+     No network fonts, so the app looks finished offline and on slow field connections. */
+  --font-system: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@theme inline {
+  --font-sans: var(--font-system);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-positive: var(--positive);
+  --color-positive-soft: var(--positive-soft);
+  --color-negative: var(--negative);
+  --color-negative-soft: var(--negative-soft);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/70;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    /* A wide table or chart must scroll inside its card, never the page. */
+    overflow-x: hidden;
+  }
+
+  /* Tailwind preflight resets buttons to the arrow cursor; restore the affordance once, here. */
+  a[href],
+  button:not(:disabled),
+  summary,
+  select:not(:disabled),
+  label[for],
+  [role="button"]:not([aria-disabled="true"]),
+  [role="tab"],
+  [role="switch"],
+  [role="checkbox"],
+  [role="radio"],
+  [role="option"],
+  [role="menuitem"],
+  [role="menuitemradio"],
+  [role="menuitemcheckbox"] {
+    cursor: pointer;
+  }
+
+  :disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  /* Fallback focus ring for anything that does not draw its own (links, custom elements). */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* Figures line up in columns and do not jitter when filters change the value. */
+  .tabular,
+  table td,
+  table th {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* ApexCharts tooltip styled like a shadcn popover, so both chart libraries and the UI share one surface. */
+  .apexcharts-tooltip.apexcharts-theme-light {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--popover);
+    color: var(--popover-foreground);
+    box-shadow: 0 4px 12px rgb(25 25 23 / 0.08);
+    font-family: var(--font-system);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+    border-bottom: 1px solid var(--border);
+    background: var(--muted);
+    font-weight: 600;
+  }
+
+  .apexcharts-xaxistooltip,
+  .apexcharts-yaxistooltip {
+    border-color: var(--border) !important;
+    background: var(--popover) !important;
+    color: var(--popover-foreground) !important;
+    font-family: var(--font-system) !important;
+  }
+
+  .apexcharts-text,
+  .apexcharts-datalabel,
+  .apexcharts-legend-text {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

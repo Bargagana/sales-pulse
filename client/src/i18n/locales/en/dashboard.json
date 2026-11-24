@@ -1,0 +1,255 @@
+{
+  "loading": "Loading the dashboard...",
+  "period": {
+    "label": "Comparison period",
+    "compare": "{{current}} vs {{baseline}}",
+    "partial": "(days 1 to {{day}})"
+  },
+  "telegram": {
+    "send": "Send to Telegram",
+    "sendShort": "Send",
+    "sending": "Sending...",
+    "sendingShort": "Send...",
+    "sent": "Summary sent to Telegram.",
+    "failed": "The summary was not sent.",
+    "errors": {
+      "unauthorized": "Telegram rejected the bot token. Check the token in Settings.",
+      "chat_not_found": "The chat ID was not found. Check the chat ID in Settings.",
+      "bot_blocked": "The bot has not been started in this chat, or is blocked. Open the chat with the bot, press Start, then try again.",
+      "not_found": "The Telegram address was not found. Check the bot token in Settings.",
+      "timeout": "Telegram did not answer in time. Try again in a moment.",
+      "network": "Cannot reach Telegram. Check this computer's internet connection.",
+      "bad_request": "Telegram rejected this message. Try regenerating the summary.",
+      "bad_response": "Telegram's reply could not be read. Try again.",
+      "notConfigured": "Telegram is not set up yet. Open Settings to add the bot token and chat ID.",
+      "unknown": "The cause is unknown. Try again."
+    }
+  },
+  "live": {
+    "updated": "New data arrived through the push API: {{rows}} rows.",
+    "failed": "New data arrived but could not be loaded. Reload the page."
+  },
+  "errors": {
+    "datasetTitle": "Sales data could not be loaded",
+    "dataset": "The local server did not return the sales data. Try again.",
+    "noDataset": "There is no active data yet. Upload a CSV from Settings."
+  },
+  "banners": {
+    "unmapped": {
+      "title_one": "{{formatted}} value is not mapped yet",
+      "title_other": "{{formatted}} values are not mapped yet",
+      "body": "The latest data contains values that were never confirmed: {{values}}. {{rows}} rows show as \"Unmapped\" until the mapping is confirmed.",
+      "action": "Review the mapping in Settings"
+    },
+    "quality": {
+      "line": "{{read}} rows read, {{clean}} used. {{duplicates}} duplicates removed, {{fixed}} values fixed.",
+      "open": "View the data quality report"
+    }
+  },
+  "quality": {
+    "title": "Data quality report",
+    "description": "Every fix applied to the active data before any number was calculated.",
+    "rows": "Rows",
+    "rowsValue": "{{read}} read, {{clean}} used",
+    "duplicates": "Duplicates removed",
+    "duplicatesValue_one": "{{formatted}} (row {{rows}})",
+    "duplicatesValue_other": "{{formatted}} (rows {{rows}})",
+    "trimmed": "Extra spaces trimmed",
+    "returns": "Returns",
+    "returnsValue_one": "{{formatted}} line, {{value}}",
+    "returnsValue_other": "{{formatted}} lines, {{value}}",
+    "missingSalesman": "Rows without a salesman",
+    "arithmetic": "Rows whose amounts do not add up",
+    "unparseable": "Rows dropped because a required value was unreadable",
+    "missingColumns": "Optional columns not present",
+    "fixedTitle": "Values fixed",
+    "fixedItem_one": "{{from}} became {{to}} ({{formatted}} row)",
+    "fixedItem_other": "{{from}} became {{to}} ({{formatted}} rows)",
+    "sharedTitle": "Names used by more than one outlet",
+    "sharedItem": "{{name}}: {{ids}} (counted separately by ID)"
+  },
+  "columns": {
+    "date": "Date",
+    "invoice_no": "Invoice no.",
+    "region": "Region",
+    "branch": "Branch",
+    "outlet_id": "Outlet ID",
+    "outlet_name": "Outlet name",
+    "outlet_type": "Outlet type",
+    "salesman": "Salesman",
+    "brand": "Brand",
+    "sku": "SKU",
+    "qty_carton": "Cartons",
+    "price_per_carton_idr": "Price per carton",
+    "gross_sales_idr": "Gross sales",
+    "discount_idr": "Discount",
+    "net_sales_idr": "Net sales"
+  },
+  "filters": {
+    "title": "Filters",
+    "sheetDescription": "Every number and chart follows these choices right away.",
+    "date": "Dates",
+    "allDates": "All dates",
+    "dim": {
+      "regions": "Region",
+      "branches": "Branch",
+      "brands": "Brand",
+      "outletTypes": "Outlet type",
+      "salesmen": "Salesman",
+      "skus": "SKU",
+      "outletIds": "Outlet"
+    },
+    "search": "Search {{dimension}}",
+    "searchPlaceholder": "Type to search",
+    "noMatch": "Nothing matches.",
+    "clearDimension_one": "Clear selection ({{count}})",
+    "clearDimension_other": "Clear selection ({{count}})",
+    "selectedCount_one": "{{count}} selected",
+    "selectedCount_other": "{{count}} selected",
+    "showRows_one": "Show {{formatted}} row",
+    "showRows_other": "Show {{formatted}} rows",
+    "active": "Active filters",
+    "remove": "Remove filter {{filter}}",
+    "clearAll": "Clear all filters"
+  },
+  "kpi": {
+    "title": "Key numbers",
+    "netSales": "Net sales",
+    "invoices": "Invoices",
+    "activeOutlets": "Active outlets",
+    "returns": "Returns",
+    "vs": "vs {{month}}",
+    "vsPartial": "vs {{month}}, days 1 to {{day}}",
+    "inMonth": "{{value}} in {{month}}",
+    "returnLines_one": "{{formatted}} return line",
+    "returnLines_other": "{{formatted}} return lines"
+  },
+  "charts": {
+    "title": "Sales breakdown",
+    "description": "Tap a bar, slice, cell, bubble or tile to filter every number.",
+    "netSales": "Net sales",
+    "change": "Change",
+    "total": "Total",
+    "other": "Other",
+    "otherSkus": "Other SKUs",
+    "shareOfTotal": "{{share}} of total",
+    "clickToFilter": "Tap to filter, tap again to release.",
+    "legend": "Legend: {{chart}}",
+    "needsTwoMonths": {
+      "title": "Needs two months of data",
+      "body": "Change is measured from the previous month to the latest one. The data under these filters covers a single month."
+    },
+    "map": {
+      "title": "Sales map by region",
+      "question": "Where are sales across Indonesia?",
+      "footer": "Colour = region, matching the region chart. Regions that are not provinces (e.g. Jabodetabek) are drawn on the provinces their branches are in. Tap an area to filter by region.",
+      "notOnMap": "Not yet on map",
+      "noSales": "No sales for these filters",
+      "branches": "Branches:"
+    },
+    "region": {
+      "title": "Sales by region",
+      "question": "Which region is biggest?"
+    },
+    "heatmap": {
+      "title": "Brand by region",
+      "question": "Which brand is strong in which region?",
+      "footer": "Darker means more net sales. Tap a cell to filter by that region and brand together."
+    },
+    "brand": {
+      "title": "Brand share",
+      "question": "What share does each brand have?"
+    },
+    "daily": {
+      "title": "Daily trend",
+      "question": "How is the daily trend?",
+      "footer": "Drag or resize the strip below the chart to zoom into a date range.",
+      "apply": "Filter {{range}}"
+    },
+    "outletChange": {
+      "title": "Biggest outlet changes",
+      "question": "Which outlets fell the most?",
+      "footer": "The 10 outlets with the largest rupiah change from the previous month. New outlets are not included. Tap a bar to filter by that outlet."
+    },
+    "sku": {
+      "title": "Top SKUs",
+      "question": "Which SKUs sell most?",
+      "footer": "Tile colour = brand. Tap a tile to filter by that SKU."
+    },
+    "outletType": {
+      "title": "Outlet type by region",
+      "question": "Which outlet types matter?"
+    }
+  },
+  "weakest": {
+    "title": "5 weakest outlets",
+    "modeLabel": "How outlets are ranked",
+    "mode": {
+      "decline": "Decline vs peers",
+      "lowest": "Lowest vs peers"
+    },
+    "definition": {
+      "decline": "Outlets whose sales fell most compared with outlets of the same type. Score = the outlet's change minus the median change of its outlet type, so a warung is compared with warungs.",
+      "lowest": "Outlets with the smallest sales compared with outlets of the same type. Figure = outlet sales divided by the median sales of its outlet type (1.00× = at the median)."
+    },
+    "col": {
+      "outlet": "Outlet",
+      "type": "Type",
+      "branch": "Branch",
+      "salesman": "Salesman",
+      "baseline": "Last month",
+      "current": "This month",
+      "change": "Change (Rp)",
+      "mom": "Change (%)",
+      "peerMedian": "Peer median",
+      "vsPeers": "vs peer median"
+    },
+    "newExcluded_one": "A new outlet with no sales last month is not ranked: {{outlets}}.",
+    "newExcluded_other": "{{count}} new outlets with no sales last month are not ranked: {{outlets}}.",
+    "needsBaseline": {
+      "title": "Months cannot be compared yet",
+      "body": "The data under these filters covers a single month, so a decline cannot be measured.",
+      "action": "Show lowest vs peers"
+    },
+    "empty": {
+      "title": "No outlets to rank",
+      "body": "Loosen the filters so some outlets have sales in both months."
+    }
+  },
+  "summary": {
+    "title": "Summary for Telegram",
+    "description": "One paragraph for the sales manager. The app computes every number; AI only writes the sentences.",
+    "previewLabel": "Telegram message preview",
+    "generating": "Writing the summary...",
+    "regenerate": "Regenerate",
+    "copy": "Copy text",
+    "copied": "Summary copied.",
+    "copyFailed": "The browser blocked copying. Select the text and copy it by hand.",
+    "error": "The summary could not be written. Check that the local server is still running.",
+    "stale": "The filters have changed. Regenerate so the summary follows the current filters.",
+    "warnings_one": "Technical details ({{count}})",
+    "warnings_other": "Technical details ({{count}})",
+    "scope": {
+      "label": "Scope",
+      "national": "National",
+      "region": "Region {{region}}",
+      "combined_one": "{{count}} regions combined",
+      "combined_other": "{{count}} regions combined"
+    },
+    "source": {
+      "label": "Written by",
+      "llm": "AI",
+      "fallback": "Standard template"
+    },
+    "sourceNote": {
+      "llm": "AI wrote the sentences; the app filled in and checked every number.",
+      "fallback": "AI was not used or its answer failed the checks, so the standard template was used with the same numbers."
+    },
+    "notice": {
+      "llm_not_configured": "The AI is not set up.",
+      "llm_invalid": "The AI answer failed the checks twice (for example it wrote a number itself).",
+      "llm_failed": "The AI could not be reached.",
+      "mapping_reused": "A saved mapping was reused."
+    }
+  }
+}

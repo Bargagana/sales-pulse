@@ -1,0 +1,255 @@
+{
+  "loading": "Memuat dashboard...",
+  "period": {
+    "label": "Periode perbandingan",
+    "compare": "{{current}} vs {{baseline}}",
+    "partial": "(hari 1 sampai {{day}})"
+  },
+  "telegram": {
+    "send": "Kirim ke Telegram",
+    "sendShort": "Kirim",
+    "sending": "Mengirim...",
+    "sendingShort": "Kirim...",
+    "sent": "Ringkasan terkirim ke Telegram.",
+    "failed": "Ringkasan tidak terkirim.",
+    "errors": {
+      "unauthorized": "Token bot ditolak Telegram. Periksa token di Pengaturan.",
+      "chat_not_found": "Chat ID tidak ditemukan. Periksa Chat ID di Pengaturan.",
+      "bot_blocked": "Bot belum dimulai atau diblokir di chat ini. Buka chat dengan bot, tekan Start, lalu coba lagi.",
+      "not_found": "Alamat Telegram tidak ditemukan. Periksa token bot di Pengaturan.",
+      "timeout": "Telegram tidak menjawab tepat waktu. Coba lagi sebentar lagi.",
+      "network": "Tidak bisa menghubungi Telegram. Periksa koneksi internet komputer ini.",
+      "bad_request": "Telegram menolak pesan ini. Coba buat ulang ringkasan.",
+      "bad_response": "Jawaban Telegram tidak bisa dibaca. Coba lagi.",
+      "notConfigured": "Telegram belum diatur. Buka Pengaturan untuk mengisi token bot dan Chat ID.",
+      "unknown": "Penyebabnya tidak diketahui. Coba lagi."
+    }
+  },
+  "live": {
+    "updated": "Data baru masuk lewat push API: {{rows}} baris.",
+    "failed": "Data baru masuk, tetapi gagal dimuat. Muat ulang halaman."
+  },
+  "errors": {
+    "datasetTitle": "Data penjualan tidak bisa dimuat",
+    "dataset": "Server lokal tidak memberikan data penjualan. Coba lagi.",
+    "noDataset": "Belum ada data aktif. Unggah CSV lewat Pengaturan."
+  },
+  "banners": {
+    "unmapped": {
+      "title_one": "{{formatted}} nilai belum dipetakan",
+      "title_other": "{{formatted}} nilai belum dipetakan",
+      "body": "Data terakhir berisi nilai yang belum pernah dikonfirmasi: {{values}}. {{rows}} baris ditampilkan sebagai \"Unmapped\" sampai pemetaannya dikonfirmasi.",
+      "action": "Tinjau pemetaan di Pengaturan"
+    },
+    "quality": {
+      "line": "{{read}} baris dibaca, {{clean}} dipakai. {{duplicates}} duplikat dihapus, {{fixed}} nilai diperbaiki.",
+      "open": "Lihat laporan kualitas data"
+    }
+  },
+  "quality": {
+    "title": "Laporan kualitas data",
+    "description": "Semua perbaikan yang dilakukan pada data aktif sebelum angka dihitung.",
+    "rows": "Baris",
+    "rowsValue": "{{read}} dibaca, {{clean}} dipakai",
+    "duplicates": "Duplikat dihapus",
+    "duplicatesValue_one": "{{formatted}} (baris {{rows}})",
+    "duplicatesValue_other": "{{formatted}} (baris {{rows}})",
+    "trimmed": "Spasi berlebih dirapikan",
+    "returns": "Retur",
+    "returnsValue_one": "{{formatted}} baris, {{value}}",
+    "returnsValue_other": "{{formatted}} baris, {{value}}",
+    "missingSalesman": "Baris tanpa salesman",
+    "arithmetic": "Baris dengan hitungan tidak cocok",
+    "unparseable": "Baris dibuang karena nilai wajib tidak terbaca",
+    "missingColumns": "Kolom opsional yang tidak ada",
+    "fixedTitle": "Nilai yang diperbaiki",
+    "fixedItem_one": "{{from}} menjadi {{to}} ({{formatted}} baris)",
+    "fixedItem_other": "{{from}} menjadi {{to}} ({{formatted}} baris)",
+    "sharedTitle": "Nama yang dipakai lebih dari satu outlet",
+    "sharedItem": "{{name}}: {{ids}} (dihitung terpisah per ID)"
+  },
+  "columns": {
+    "date": "Tanggal",
+    "invoice_no": "No. faktur",
+    "region": "Region",
+    "branch": "Cabang",
+    "outlet_id": "ID outlet",
+    "outlet_name": "Nama outlet",
+    "outlet_type": "Jenis outlet",
+    "salesman": "Salesman",
+    "brand": "Brand",
+    "sku": "SKU",
+    "qty_carton": "Jumlah karton",
+    "price_per_carton_idr": "Harga per karton",
+    "gross_sales_idr": "Penjualan kotor",
+    "discount_idr": "Diskon",
+    "net_sales_idr": "Penjualan bersih"
+  },
+  "filters": {
+    "title": "Filter",
+    "sheetDescription": "Semua angka dan grafik langsung mengikuti pilihan ini.",
+    "date": "Tanggal",
+    "allDates": "Semua tanggal",
+    "dim": {
+      "regions": "Region",
+      "branches": "Cabang",
+      "brands": "Brand",
+      "outletTypes": "Jenis outlet",
+      "salesmen": "Salesman",
+      "skus": "SKU",
+      "outletIds": "Outlet"
+    },
+    "search": "Cari {{dimension}}",
+    "searchPlaceholder": "Ketik untuk mencari",
+    "noMatch": "Tidak ada yang cocok.",
+    "clearDimension_one": "Hapus pilihan ({{count}})",
+    "clearDimension_other": "Hapus pilihan ({{count}})",
+    "selectedCount_one": "{{count}} dipilih",
+    "selectedCount_other": "{{count}} dipilih",
+    "showRows_one": "Tampilkan {{formatted}} baris",
+    "showRows_other": "Tampilkan {{formatted}} baris",
+    "active": "Filter aktif",
+    "remove": "Hapus filter {{filter}}",
+    "clearAll": "Hapus semua filter"
+  },
+  "kpi": {
+    "title": "Angka utama",
+    "netSales": "Penjualan bersih",
+    "invoices": "Faktur",
+    "activeOutlets": "Outlet aktif",
+    "returns": "Retur",
+    "vs": "vs {{month}}",
+    "vsPartial": "vs {{month}}, hari 1 sampai {{day}}",
+    "inMonth": "{{value}} di {{month}}",
+    "returnLines_one": "{{formatted}} baris retur",
+    "returnLines_other": "{{formatted}} baris retur"
+  },
+  "charts": {
+    "title": "Rincian penjualan",
+    "description": "Ketuk batang, irisan, sel, gelembung atau kotak untuk memfilter semua angka.",
+    "netSales": "Penjualan bersih",
+    "change": "Perubahan",
+    "total": "Total",
+    "other": "Lainnya",
+    "otherSkus": "SKU lainnya",
+    "shareOfTotal": "{{share}} dari total",
+    "clickToFilter": "Ketuk untuk memfilter, ketuk lagi untuk melepas.",
+    "legend": "Legenda: {{chart}}",
+    "needsTwoMonths": {
+      "title": "Butuh data dua bulan",
+      "body": "Perubahan dihitung dari bulan sebelumnya ke bulan terakhir. Data dengan filter ini hanya mencakup satu bulan."
+    },
+    "map": {
+      "title": "Peta penjualan per region",
+      "question": "Di mana penjualan terjadi di Indonesia?",
+      "footer": "Warna = region, sama dengan grafik region. Region yang bukan provinsi (mis. Jabodetabek) digambar di provinsi tempat cabangnya berada. Ketuk area untuk memfilter region.",
+      "notOnMap": "Belum ada di peta",
+      "noSales": "Tidak ada penjualan untuk filter ini",
+      "branches": "Cabang:"
+    },
+    "region": {
+      "title": "Penjualan per region",
+      "question": "Region mana yang paling besar?"
+    },
+    "heatmap": {
+      "title": "Brand per region",
+      "question": "Brand mana yang kuat di region mana?",
+      "footer": "Makin gelap makin besar penjualan bersih. Ketuk sel untuk memfilter region dan brand sekaligus."
+    },
+    "brand": {
+      "title": "Pangsa brand",
+      "question": "Berapa pangsa tiap brand?"
+    },
+    "daily": {
+      "title": "Tren harian",
+      "question": "Bagaimana tren penjualan harian?",
+      "footer": "Geser atau tarik pita di bawah grafik untuk memperbesar rentang tanggal.",
+      "apply": "Filter {{range}}"
+    },
+    "outletChange": {
+      "title": "Perubahan outlet terbesar",
+      "question": "Outlet mana yang turun paling banyak?",
+      "footer": "10 outlet dengan perubahan rupiah terbesar dari bulan sebelumnya. Outlet baru tidak termasuk. Ketuk batang untuk memfilter outlet tersebut."
+    },
+    "sku": {
+      "title": "SKU terlaris",
+      "question": "SKU mana yang paling laku?",
+      "footer": "Warna kotak = brand. Ketuk kotak untuk memfilter SKU tersebut."
+    },
+    "outletType": {
+      "title": "Jenis outlet per region",
+      "question": "Jenis outlet mana yang penting?"
+    }
+  },
+  "weakest": {
+    "title": "5 outlet terlemah",
+    "modeLabel": "Cara mengurutkan outlet",
+    "mode": {
+      "decline": "Turun vs rekan",
+      "lowest": "Terendah vs rekan"
+    },
+    "definition": {
+      "decline": "Outlet yang penjualannya paling turun dibanding outlet sejenis. Skor = perubahan outlet dikurangi median perubahan jenis outletnya, sehingga warung dibandingkan dengan warung.",
+      "lowest": "Outlet dengan penjualan paling kecil dibanding outlet sejenis. Angka = penjualan outlet dibagi median penjualan jenis outletnya (1,00× = setara median)."
+    },
+    "col": {
+      "outlet": "Outlet",
+      "type": "Jenis",
+      "branch": "Cabang",
+      "salesman": "Salesman",
+      "baseline": "Bulan lalu",
+      "current": "Bulan ini",
+      "change": "Perubahan Rp",
+      "mom": "Perubahan %",
+      "peerMedian": "Median rekan",
+      "vsPeers": "vs median rekan"
+    },
+    "newExcluded_one": "Outlet baru tanpa penjualan bulan lalu tidak diurutkan: {{outlets}}.",
+    "newExcluded_other": "{{count}} outlet baru tanpa penjualan bulan lalu tidak diurutkan: {{outlets}}.",
+    "needsBaseline": {
+      "title": "Belum bisa membandingkan bulan",
+      "body": "Data dengan filter ini hanya mencakup satu bulan, jadi penurunan belum bisa dihitung.",
+      "action": "Lihat terendah vs rekan"
+    },
+    "empty": {
+      "title": "Tidak ada outlet untuk diurutkan",
+      "body": "Longgarkan filter agar ada outlet dengan penjualan di kedua bulan."
+    }
+  },
+  "summary": {
+    "title": "Ringkasan untuk Telegram",
+    "description": "Satu paragraf untuk manajer penjualan. Semua angka dihitung oleh aplikasi; AI hanya menulis kalimatnya.",
+    "previewLabel": "Pratinjau pesan Telegram",
+    "generating": "Menyusun ringkasan...",
+    "regenerate": "Buat ulang",
+    "copy": "Salin teks",
+    "copied": "Ringkasan disalin.",
+    "copyFailed": "Browser menolak menyalin. Pilih teksnya lalu salin manual.",
+    "error": "Ringkasan tidak bisa dibuat. Periksa bahwa server lokal masih berjalan.",
+    "stale": "Filter sudah berubah. Buat ulang agar ringkasan mengikuti filter sekarang.",
+    "warnings_one": "Detail teknis ({{count}})",
+    "warnings_other": "Detail teknis ({{count}})",
+    "scope": {
+      "label": "Cakupan",
+      "national": "Nasional",
+      "region": "Region {{region}}",
+      "combined_one": "Gabungan {{count}} region",
+      "combined_other": "Gabungan {{count}} region"
+    },
+    "source": {
+      "label": "Penulis",
+      "llm": "AI",
+      "fallback": "Template standar"
+    },
+    "sourceNote": {
+      "llm": "Kalimat ditulis AI, setiap angka diisi dan diperiksa oleh aplikasi.",
+      "fallback": "AI tidak dipakai atau jawabannya gagal diperiksa, jadi dipakai template standar dengan angka yang sama."
+    },
+    "notice": {
+      "llm_not_configured": "AI belum diatur.",
+      "llm_invalid": "Jawaban AI dua kali tidak lolos pemeriksaan (misalnya menulis angka sendiri).",
+      "llm_failed": "AI tidak bisa dihubungi.",
+      "mapping_reused": "Pemetaan tersimpan dipakai lagi."
+    }
+  }
+}

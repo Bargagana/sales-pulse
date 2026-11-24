@@ -1,0 +1,383 @@
+{
+  "dialog": {
+    "initialTitle": "Siapkan Sales Pulse",
+    "initialDescription": "Enam langkah singkat dari ekspor penjualan mentah ke dasbor yang bisa dipercaya. Setiap langkah harus berhasil sebelum langkah berikutnya terbuka.",
+    "settingsTitle": "Pengaturan",
+    "settingsDescription": "Ubah satu bagian setiap kali. Kosongkan kunci atau token untuk tetap memakai yang tersimpan."
+  },
+  "steps": {
+    "language": "Bahasa",
+    "llm": "Koneksi AI",
+    "data": "Muat data",
+    "mapping": "Tinjau pemetaan",
+    "quality": "Kualitas data",
+    "telegram": "Telegram"
+  },
+  "stepper": {
+    "label": "Kemajuan penyiapan",
+    "position": "Langkah {{n}} dari {{total}}",
+    "done": "Selesai",
+    "current": "(langkah saat ini)"
+  },
+  "actions": {
+    "continue": "Lanjut"
+  },
+  "secret": {
+    "show": "Tampilkan",
+    "hide": "Sembunyikan"
+  },
+  "language": {
+    "title": "Sales Pulse memakai bahasa apa?",
+    "description": "Pilihan ini berlaku untuk tampilan dan ringkasan Telegram. Bisa diganti kapan saja dari bagian atas layar.",
+    "option": {
+      "id": "Tampilan dan ringkasan Telegram dalam Bahasa Indonesia.",
+      "en": "Tampilan dan ringkasan Telegram dalam bahasa Inggris."
+    },
+    "save": "Pakai {{language}}",
+    "saving": "Menyimpan..."
+  },
+  "llm": {
+    "title": "Hubungkan AI yang membaca file Anda",
+    "description": "AI mengusulkan cara membaca kolom dan memperbaiki ejaan, lalu menyusun kalimat ringkasan. AI tidak pernah menghitung angka.",
+    "format": "Format API",
+    "formats": {
+      "openai": "Kompatibel OpenAI",
+      "anthropic": "Anthropic"
+    },
+    "formatHint": {
+      "openai": "OpenAI, OpenRouter, Groq, server Ollama atau LM Studio lokal, dan kebanyakan gateway.",
+      "anthropic": "Claude API di api.anthropic.com, atau gateway dengan format yang sama."
+    },
+    "baseUrl": "Base URL",
+    "baseUrlHint": "Sudah terisi sesuai format yang dipilih. Ganti untuk penyedia atau gateway lain.",
+    "apiKey": "API key",
+    "keyHint": "Disimpan terenkripsi hanya di komputer ini. Tidak pernah ditampilkan lagi atau dikirim ke browser.",
+    "keySaved": "Kunci tersimpan",
+    "keySavedHint": "Sudah ada kunci tersimpan. Kosongkan untuk tetap memakainya, atau tempel kunci baru untuk menggantinya.",
+    "model": "Model",
+    "modelPlaceholder": {
+      "openai": "mis. gpt-4.1-mini",
+      "anthropic": "mis. claude-opus-5-5"
+    },
+    "modelHint": {
+      "openai": "Nama model persis seperti yang ditulis penyedia Anda.",
+      "anthropic": "Nama model persis seperti yang ditulis Anthropic."
+    },
+    "test": "Tes koneksi",
+    "testing": "Menguji koneksi...",
+    "saved": "Terhubung ke {{model}}. Pengaturan tersimpan.",
+    "privacy": "Yang diterima AI: nama kolom, 5 baris contoh, dan daftar nama unik (region, brand, cabang...). Tidak pernah seluruh file.",
+    "errors": {
+      "url": "Masukkan alamat lengkap yang diawali https://",
+      "key": "Tempel API key dari penyedia Anda.",
+      "model": "Masukkan nama model."
+    },
+    "detail": "Detail teknis: {{detail}}"
+  },
+  "data": {
+    "title": "Muat ekspor penjualan Anda",
+    "settingsTitle": "Unggah data baru",
+    "description": "CSV langsung dari ERP bisa dipakai: urutan kolom apa saja, pemisah koma atau titik koma, angka format Indonesia atau biasa. Belum ada yang diubah sampai Anda mengonfirmasi pemetaan.",
+    "active": "Data aktif: {{rows}} baris, {{period}}.",
+    "drop": "Taruh file CSV di sini",
+    "dropHint": "atau pilih dari komputer ini. Maksimal 20 MB.",
+    "choose": "Pilih file CSV",
+    "chooseOther": "Pilih file lain",
+    "notCsv": "\"{{name}}\" bukan file CSV. Ekspor laporan penjualan sebagai CSV, lalu coba lagi.",
+    "upload": "Unggah dan baca file",
+    "uploading": "Membaca file...",
+    "uploaded": "Terunggah: {{rows}} baris, {{columns}} kolom.",
+    "continue": "Lanjut ke pemetaan"
+  },
+  "push": {
+    "title": "Atau kirim data lewat skrip",
+    "description": "Tugas ekspor ERP atau agen bisa mengirim CSV ke aplikasi ini. Data dibersihkan dengan pemetaan yang Anda konfirmasi di sini, dan dasbor yang sedang terbuka ikut diperbarui tanpa dimuat ulang.",
+    "loading": "Memuat push token...",
+    "token": "Push token",
+    "showToken": "Tampilkan token",
+    "hideToken": "Sembunyikan token",
+    "copyToken": "Salin push token",
+    "rotate": "Token baru",
+    "rotateTitle": "Ganti push token?",
+    "rotateBody": "Skrip yang memakai token lama akan mendapat \"401 unauthorized\" sampai Anda memberinya token baru.",
+    "rotateConfirm": "Ganti token",
+    "rotating": "Mengganti...",
+    "rotated": "Token baru sudah aktif. Token lama tidak berlaku lagi.",
+    "example": "Contoh panggilan",
+    "copyCurl": "Salin perintah curl",
+    "exampleHint": "Jalankan dari folder proyek. Perintah yang disalin berisi token lengkap.",
+    "copyFailed": "Gagal menyalin. Pilih teksnya dan salin secara manual."
+  },
+  "mapping": {
+    "title": "Periksa cara file dibaca",
+    "description": "{{file}}, {{rows}} baris. Perbaiki yang terlihat salah: angka di dasbor mengikuti persis apa yang Anda konfirmasi di sini.",
+    "loading": "AI sedang membaca nama kolom dan nilai unik...",
+    "loadingDetail": "AI hanya melihat baris judul, 5 baris contoh, dan daftar nama unik per kolom. Seluruh data tetap di komputer ini.",
+    "loadErrorTitle": "Usulan pemetaan gagal dibuat",
+    "source": {
+      "llm": "Usulan AI",
+      "heuristic": "Aturan bawaan",
+      "saved": "Pemetaan tersimpan"
+    },
+    "sourceBody": {
+      "llm": "Diusulkan oleh AI. Periksa sebelum mengonfirmasi.",
+      "heuristic": "AI tidak dipakai, jadi usulan ini dibuat oleh aturan bawaan. Periksa sebelum mengonfirmasi.",
+      "saved": "Anda sudah mengonfirmasi pemetaan ini untuk file yang sama, jadi pemetaan itu dipakai lagi tanpa bertanya ke AI. Periksa dulu sebelum mengonfirmasi."
+    },
+    "details": "Catatan teknis ({{n}})",
+    "missingRequired": "Kolom wajib ini belum dipetakan: {{columns}}. Pilih kolom file untuk masing-masing.",
+    "duplicates": "Kolom ini dipilih untuk lebih dari satu kolom file: {{columns}}. Pertahankan satu, atur sisanya ke \"Abaikan\".",
+    "emptyFix": "Beberapa perbaikan nama belum punya tujuan: {{values}}. Ketik nama yang benar atau hapus perbaikannya.",
+    "columnsTitle": "Kolom",
+    "columnsHint": "Kolom mana di file yang berisi data apa. Kolom wajib diberi tanda.",
+    "headerInFile": "Kolom di file",
+    "readAs": "Dibaca sebagai",
+    "readAsFor": "Baca kolom {{header}} sebagai",
+    "required": "Wajib",
+    "requiredOption": "{{column}} (wajib)",
+    "ignore": "Abaikan kolom ini",
+    "ignored": "Tidak dipakai",
+    "example": "contoh: {{value}}",
+    "duplicateRow": "Juga dipilih untuk kolom lain.",
+    "formatsTitle": "Tanggal dan angka",
+    "dateFormat": "Format tanggal",
+    "dateFormatHint": "Periksa ini bila hari dan bulan bisa tertukar (03/09 = 3 September atau 9 Maret?).",
+    "dateFormats": {
+      "iso": "Tahun-bulan-hari (2026-10-31)",
+      "dmySlash": "Hari/bulan/tahun (31/10/2026)",
+      "dmyDash": "Hari-bulan-tahun (31-10-2026)",
+      "mdySlash": "Bulan/hari/tahun (10/31/2026)"
+    },
+    "numberFormat": "Format angka",
+    "numberFormatHint": "Cara penulisan ribuan dan desimal di kolom nilai.",
+    "numberFormats": {
+      "plain": "Angka polos (1725966000)",
+      "id": "Indonesia (1.725.966.000 dan 1.234,5)",
+      "en": "Inggris (1,725,966,000 dan 1,234.5)"
+    },
+    "valuesTitle": "Perbaikan ejaan",
+    "valuesHint": "Setiap nama di kiri diganti dengan nama di kanan di semua baris. Nama yang tidak tercantum tetap apa adanya.",
+    "noFixes": "Tidak ada usulan perbaikan ejaan. Semua nama dipakai seperti tertulis.",
+    "fixTarget": "Ganti \"{{from}}\" menjadi",
+    "rows_one": "{{n}} baris",
+    "rows_other": "{{n}} baris",
+    "rowsUnknown": "jumlah baris tidak tersedia",
+    "removeFix": "Hapus perbaikan untuk \"{{from}}\"",
+    "addTitle": "Tambah perbaikan",
+    "addColumn": "Kolom",
+    "addFrom": "Nama di file",
+    "addTo": "Nama yang benar",
+    "pick": "Pilih...",
+    "valueWithRows": "{{value}} ({{n}})",
+    "add": "Tambah perbaikan",
+    "geoTitle": "Lokasi cabang untuk peta",
+    "geoHint": "Diusulkan AI untuk cabang yang belum ada di tabel lokasi bawaan. Hapus yang terlihat salah; cabang itu akan tercantum di \"Belum ada di peta\".",
+    "geoNone": "Tidak perlu lokasi baru: semua cabang ada di tabel bawaan, atau akan tercantum di \"Belum ada di peta\".",
+    "geoPoint": "Lintang {{lat}}, bujur {{lon}}",
+    "removeGeo": "Hapus lokasi untuk {{branch}}",
+    "confirm": "Konfirmasi pemetaan",
+    "applying": "Membersihkan data...",
+    "notice": {
+      "llm_not_configured": "AI belum diatur, jadi aturan bawaan yang dipakai.",
+      "llm_invalid": "AI menjawab dua kali tetapi jawabannya tidak lolos pemeriksaan, jadi aturan bawaan yang dipakai.",
+      "llm_failed": "AI tidak bisa dihubungi, jadi aturan bawaan yang dipakai.",
+      "mapping_reused": "File ini cocok dengan pemetaan yang pernah Anda konfirmasi."
+    }
+  },
+  "quality": {
+    "title": "Yang ditemukan di data Anda",
+    "description": "Semua perubahan pada file, supaya setiap total bisa ditelusuri. Konfirmasi untuk memakai data ini.",
+    "loading": "Memuat laporan kualitas data...",
+    "loadErrorTitle": "Laporan gagal dimuat",
+    "rowsCaption": "baris dibaca, baris yang dipakai untuk angka",
+    "to": "menjadi",
+    "none": "Tidak ada",
+    "more": "dan {{n}} lainnya",
+    "rowNumbers": "Baris di file: {{rows}}",
+    "trimmed": {
+      "title": "Spasi berlebih dihapus",
+      "body": "Spasi sebelum atau sesudah nama dibuang, jadi \"Jawa Barat \" dan \"Jawa Barat\" dihitung sama."
+    },
+    "fixed": {
+      "title": "Nama diperbaiki",
+      "body": "Perbaikan ejaan yang Anda konfirmasi, diterapkan ke semua baris."
+    },
+    "duplicates": {
+      "title": "Baris duplikat dihapus",
+      "body": "Baris yang sama persis di semua kolom hanya dihitung sekali."
+    },
+    "returns": {
+      "title": "Baris retur",
+      "value": "{{rows}}, {{amount}}",
+      "body": "Retur tetap dihitung sebagai penjualan negatif, jadi penjualan bersih sudah dikurangi retur."
+    },
+    "shared": {
+      "title": "Nama yang dipakai outlet berbeda",
+      "body": "Outlet dihitung per ID, bukan per nama, jadi outlet ini tetap terpisah.",
+      "item": "\"{{name}}\": {{ids}}"
+    },
+    "variants": {
+      "title": "Outlet dengan beberapa ejaan",
+      "body": "Satu ID outlet ditulis dengan nama berbeda. Nama yang paling sering dipakai yang ditampilkan.",
+      "item": "{{id}}: {{names}}"
+    },
+    "salesman": {
+      "title": "Baris tanpa salesman",
+      "body": "Ditampilkan sebagai \"Unassigned\" supaya penjualannya tetap terhitung."
+    },
+    "arithmetic": {
+      "title": "Baris yang hitungannya tidak cocok",
+      "body": "Jumlah × harga berbeda dari bruto, atau bruto dikurangi diskon berbeda dari neto. Nilai neto di file tetap dipakai sebagai acuan.",
+      "gross": "Baris {{row}}: jumlah × harga tidak sama dengan bruto",
+      "net": "Baris {{row}}: bruto dikurangi diskon tidak sama dengan neto"
+    },
+    "unmapped": {
+      "title": "Nama di luar pemetaan yang dikonfirmasi",
+      "body": "Ditampilkan sebagai \"Unmapped\" sampai Anda menambahkannya ke pemetaan."
+    },
+    "unparseable": {
+      "title": "Baris yang tidak terbaca",
+      "body": "Nilai wajib (tanggal, region, outlet, brand, atau nilai neto) kosong atau tidak terbaca, jadi baris ini tidak masuk ke angka mana pun.",
+      "item": "Baris {{row}}, {{column}}: \"{{value}}\""
+    },
+    "missingColumns": {
+      "title": "Kolom opsional yang tidak ada di file",
+      "body": "Tampilan yang butuh kolom ini disembunyikan dengan catatan."
+    },
+    "confirm": "Konfirmasi dan pakai data ini",
+    "confirming": "Menyimpan..."
+  },
+  "telegram": {
+    "title": "Kirim ringkasan ke Telegram",
+    "description": "Sales Pulse mengirim ringkasan sebagai pesan Telegram dari bot Anda sendiri. Pesan tes harus sampai sebelum penyiapan selesai.",
+    "guide": {
+      "create": {
+        "title": "Buat bot",
+        "body": "Buka <bot>@BotFather</bot>, kirim <code>/newbot</code>, lalu jawab pertanyaannya. Salin token yang diberikan."
+      },
+      "start": {
+        "title": "Mulai chat dengan bot",
+        "body": "Buka bot baru Anda dan tekan Start. Untuk grup tim, tambahkan bot ke grup tersebut."
+      },
+      "chatId": {
+        "title": "Dapatkan chat ID",
+        "body": "Kirim pesan apa saja ke bot, lalu buka <code>api.telegram.org/bot[TOKEN]/getUpdates</code> di browser. Angka setelah <code>\"chat\":{\"id\":</code> adalah chat ID. ID grup diawali tanda minus."
+      }
+    },
+    "token": "Token bot",
+    "tokenHint": "Disimpan terenkripsi hanya di komputer ini.",
+    "tokenSaved": "Token tersimpan",
+    "tokenSavedHint": "Sudah ada token tersimpan. Kosongkan untuk tetap memakainya, atau tempel token baru untuk menggantinya.",
+    "chatId": "Chat ID",
+    "chatIdHint": "Berupa angka, atau @namakanal untuk kanal publik.",
+    "send": "Kirim pesan tes",
+    "sending": "Mengirim...",
+    "sent": "Pesan tes terkirim. Cek Telegram.",
+    "errors": {
+      "token": "Tempel token bot dari BotFather.",
+      "chat": "Masukkan chat ID."
+    }
+  },
+  "settings": {
+    "tabs": {
+      "language": "Bahasa",
+      "llm": "AI",
+      "data": "Data",
+      "telegram": "Telegram",
+      "credentials": "Kredensial"
+    },
+    "dataDoneTitle": "Data baru sudah aktif",
+    "dataDoneBody": "Dasbor sekarang memakai file ini. Tutup Pengaturan untuk melihatnya.",
+    "uploadAnother": "Unggah file lain"
+  },
+  "credentials": {
+    "title": "Kredensial tersimpan",
+    "description": "API key, token bot, dan push token dienkripsi di komputer ini dan tidak pernah dikirim ke browser.",
+    "llm": "Koneksi AI",
+    "llmSaved": "{{model}} di {{host}}",
+    "telegram": "Telegram",
+    "telegramSaved": "Chat {{chatId}}",
+    "notSaved": "Belum tersimpan",
+    "scope": "Enkripsi menjaga rahasia ini tetap di luar folder proyek, log, dan browser. Enkripsi tidak melindunginya dari orang yang bisa masuk ke akun komputer ini.",
+    "forget": "Lupakan kredensial",
+    "confirmTitle": "Lupakan semua kredensial?",
+    "confirmBody": "Ini menghapus API key, token bot, dan push token dari komputer ini. Sales Pulse akan meminta koneksi AI dan Telegram lagi sebelum menampilkan dasbor, dan skrip yang memakai push token akan berhenti bekerja.",
+    "confirm": "Lupakan kredensial",
+    "forgetting": "Menghapus...",
+    "done": "Kredensial sudah dihapus. Siapkan lagi koneksi AI dan Telegram untuk memakai dasbor."
+  },
+  "errors": {
+    "any": {
+      "serverDown": "Server Sales Pulse tidak terjangkau. Pastikan aplikasi masih berjalan di komputer ini, lalu coba lagi.",
+      "network": "Alamat itu tidak bisa dihubungi. Periksa URL dan koneksi internet.",
+      "timeout": "Tidak ada jawaban dalam 30 detik. Coba lagi, atau periksa alamatnya.",
+      "bad_response": "Jawaban datang dalam format yang tidak diharapkan.",
+      "bad_request": "Permintaan ditolak. Periksa isiannya, lalu coba lagi.",
+      "unauthorized": "Kredensial ditolak.",
+      "not_found": "Tidak ada apa pun di alamat itu.",
+      "invalid_body": "Ada isian yang kosong atau formatnya salah. Periksa kolom isian, lalu coba lagi.",
+      "invalid_json": "Ada isian yang kosong atau formatnya salah. Periksa kolom isian, lalu coba lagi.",
+      "payload_too_large": "File lebih besar dari 20 MB. Ekspor periode yang lebih pendek atau kolom yang lebih sedikit.",
+      "forbidden_origin": "Permintaan ini diblokir karena tidak berasal dari halaman Sales Pulse. Muat ulang halaman, lalu coba lagi.",
+      "forbidden_host": "Permintaan ini diblokir karena tidak berasal dari halaman Sales Pulse. Muat ulang halaman, lalu coba lagi.",
+      "internal": "Terjadi kesalahan di server Sales Pulse. Coba lagi; jika terus gagal, jalankan ulang aplikasinya.",
+      "unknown": "Terjadi kesalahan. Coba lagi sebentar lagi."
+    },
+    "llm": {
+      "unauthorized": "Penyedia menolak API key. Salin ulang kuncinya dan pastikan kunci itu milik penyedia ini.",
+      "not_found": "Penyedia tidak menemukan alamat atau model ini. Periksa base URL dan nama model.",
+      "timeout": "Penyedia tidak menjawab dalam 30 detik. Coba lagi, atau pilih model yang lebih cepat.",
+      "network": "Penyedia tidak bisa dihubungi. Periksa base URL dan koneksi internet.",
+      "bad_response": "Penyedia menjawab, tetapi isinya tidak bisa dipakai. Lihat detail teknis di bawah.",
+      "bad_request": "Penyedia menolak permintaan. Biasanya nama model salah atau tidak tersedia untuk kunci ini.",
+      "missing_api_key": "Masukkan API key. Kunci tersimpan hanya dipakai lagi untuk alamat yang sama.",
+      "provider_error": "Penyedia (atau model di belakangnya) sedang gagal menjawab. Coba lagi, atau pilih model lain."
+    },
+    "telegram": {
+      "unauthorized": "Telegram menolak token bot. Salin ulang token dari BotFather.",
+      "chat_not_found": "Chat tidak ditemukan. Periksa chat ID, dan kirim /start ke bot Anda lebih dulu.",
+      "bot_blocked": "Bot belum boleh menulis ke chat ini. Buka bot dan tekan Start (atau tambahkan ke grup), lalu coba lagi.",
+      "bad_request": "Telegram menolak pesan. Periksa chat ID.",
+      "network": "Telegram tidak bisa dihubungi. Periksa koneksi internet.",
+      "timeout": "Telegram tidak menjawab tepat waktu. Coba lagi.",
+      "bad_response": "Telegram mengirim jawaban yang tidak diharapkan. Coba lagi.",
+      "missing_bot_token": "Tempel token bot dari BotFather."
+    },
+    "data": {
+      "bad_csv": "File ini tidak bisa dibaca sebagai CSV. Ekspor ulang laporan sebagai CSV (pemisah koma, titik koma, atau tab).",
+      "missing_file": "Pilih file CSV lebih dulu.",
+      "bad_multipart": "Unggahan terpotong atau rusak. Pilih file lagi.",
+      "empty_body": "File kosong.",
+      "payload_too_large": "File lebih besar dari 20 MB. Ekspor periode yang lebih pendek atau kolom yang lebih sedikit."
+    },
+    "mapping": {
+      "upload_not_found": "Unggahan ini sudah kedaluwarsa, kemungkinan karena aplikasi dijalankan ulang. Kembali dan unggah file lagi.",
+      "missing_required_columns": "Ada kolom wajib yang belum dipetakan. Pilih kolom file untuk setiap kolom wajib.",
+      "no_valid_rows": "Tidak ada baris yang terbaca dengan pemetaan ini. Periksa format tanggal, format angka, dan kolom wajib.",
+      "unmapped_values": "Ada nama yang belum ada di pemetaan. Tambahkan perbaikan untuk nama tersebut."
+    },
+    "quality": {
+      "no_dataset": "Data bersih tidak ditemukan. Kembali dan konfirmasi pemetaan sekali lagi."
+    },
+    "push": {
+      "unauthorized": "Push token gagal dimuat. Muat ulang halaman, lalu coba lagi."
+    }
+  },
+  "columns": {
+    "date": "Tanggal",
+    "invoice_no": "Nomor faktur",
+    "region": "Region",
+    "branch": "Cabang",
+    "outlet_id": "ID outlet",
+    "outlet_name": "Nama outlet",
+    "outlet_type": "Tipe outlet",
+    "salesman": "Salesman",
+    "brand": "Brand",
+    "sku": "SKU",
+    "qty_carton": "Jumlah (karton)",
+    "price_per_carton_idr": "Harga per karton (Rp)",
+    "gross_sales_idr": "Penjualan bruto (Rp)",
+    "discount_idr": "Diskon (Rp)",
+    "net_sales_idr": "Penjualan neto (Rp)"
+  }
+}

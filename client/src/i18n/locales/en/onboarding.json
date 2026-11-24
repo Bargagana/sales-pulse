@@ -1,0 +1,383 @@
+{
+  "dialog": {
+    "initialTitle": "Set up Sales Pulse",
+    "initialDescription": "Six short steps from a raw sales export to a dashboard you can trust. Each one has to work before the next opens.",
+    "settingsTitle": "Settings",
+    "settingsDescription": "Change one part at a time. Leave a key or token blank to keep the saved one."
+  },
+  "steps": {
+    "language": "Language",
+    "llm": "AI connection",
+    "data": "Load data",
+    "mapping": "Review mapping",
+    "quality": "Data quality",
+    "telegram": "Telegram"
+  },
+  "stepper": {
+    "label": "Setup progress",
+    "position": "Step {{n}} of {{total}}",
+    "done": "Done",
+    "current": "(current step)"
+  },
+  "actions": {
+    "continue": "Continue"
+  },
+  "secret": {
+    "show": "Show",
+    "hide": "Hide"
+  },
+  "language": {
+    "title": "Which language should Sales Pulse use?",
+    "description": "This sets the screens and the Telegram summary. You can switch at any time from the header.",
+    "option": {
+      "id": "Screens and Telegram summaries in Bahasa Indonesia.",
+      "en": "Screens and Telegram summaries in English."
+    },
+    "save": "Use {{language}}",
+    "saving": "Saving..."
+  },
+  "llm": {
+    "title": "Connect the AI that reads your file",
+    "description": "The AI proposes how to read your columns and fix spellings, and words the summary. It never calculates a number.",
+    "format": "API format",
+    "formats": {
+      "openai": "OpenAI-compatible",
+      "anthropic": "Anthropic"
+    },
+    "formatHint": {
+      "openai": "OpenAI, OpenRouter, Groq, a local Ollama or LM Studio server, and most gateways.",
+      "anthropic": "The Claude API at api.anthropic.com, or a gateway that speaks the same format."
+    },
+    "baseUrl": "Base URL",
+    "baseUrlHint": "Prefilled for the format you picked. Change it for another provider or gateway.",
+    "apiKey": "API key",
+    "keyHint": "Stored encrypted on this computer only. It is never shown again or sent to the browser.",
+    "keySaved": "Key saved",
+    "keySavedHint": "A key is saved. Leave this blank to keep it, or paste a new one to replace it.",
+    "model": "Model",
+    "modelPlaceholder": {
+      "openai": "e.g. gpt-4.1-mini",
+      "anthropic": "e.g. claude-opus-5-5"
+    },
+    "modelHint": {
+      "openai": "The model id exactly as your provider writes it.",
+      "anthropic": "The model id exactly as Anthropic writes it."
+    },
+    "test": "Test connection",
+    "testing": "Testing connection...",
+    "saved": "Connected to {{model}}. The settings are saved.",
+    "privacy": "What the AI receives: column names, 5 sample rows and the list of distinct names (regions, brands, branches...). Never the full file.",
+    "errors": {
+      "url": "Enter a full address starting with https://",
+      "key": "Paste the API key from your provider.",
+      "model": "Enter the model name."
+    },
+    "detail": "Technical detail: {{detail}}"
+  },
+  "data": {
+    "title": "Load your sales export",
+    "settingsTitle": "Upload new data",
+    "description": "A CSV straight from the ERP is fine: any column order, comma or semicolon, Indonesian or plain numbers. Nothing is changed until you confirm the mapping.",
+    "active": "Active data: {{rows}} rows, {{period}}.",
+    "drop": "Drop a CSV file here",
+    "dropHint": "or pick one from this computer. Up to 20 MB.",
+    "choose": "Choose CSV file",
+    "chooseOther": "Choose another file",
+    "notCsv": "\"{{name}}\" is not a CSV file. Export the sales report as CSV and try again.",
+    "upload": "Upload and read file",
+    "uploading": "Reading file...",
+    "uploaded": "Uploaded: {{rows}} rows, {{columns}} columns.",
+    "continue": "Continue to mapping"
+  },
+  "push": {
+    "title": "Or let a script send the data",
+    "description": "An ERP export job or agent can post the CSV to this app. It is cleaned with the mapping you confirm here, and an open dashboard updates without a reload.",
+    "loading": "Loading the push token...",
+    "token": "Push token",
+    "showToken": "Show token",
+    "hideToken": "Hide token",
+    "copyToken": "Copy push token",
+    "rotate": "New token",
+    "rotateTitle": "Replace the push token?",
+    "rotateBody": "Scripts that use the current token will get \"401 unauthorized\" until you give them the new one.",
+    "rotateConfirm": "Replace token",
+    "rotating": "Replacing...",
+    "rotated": "A new token is active. The old one no longer works.",
+    "example": "Example call",
+    "copyCurl": "Copy curl command",
+    "exampleHint": "Run it from the project folder. The copied command contains the full token.",
+    "copyFailed": "Could not copy. Select the text and copy it by hand."
+  },
+  "mapping": {
+    "title": "Check how the file will be read",
+    "description": "{{file}}, {{rows}} rows. Correct anything that looks wrong: the numbers on the dashboard follow exactly what you confirm here.",
+    "loading": "The AI is reading your column names and distinct values...",
+    "loadingDetail": "It sees the header row, 5 sample rows and the list of distinct names per column. Your full data stays on this computer.",
+    "loadErrorTitle": "The mapping proposal could not be made",
+    "source": {
+      "llm": "AI proposal",
+      "heuristic": "Built-in rules",
+      "saved": "Saved mapping"
+    },
+    "sourceBody": {
+      "llm": "Proposed by the AI. Check it before you confirm.",
+      "heuristic": "The AI was not used, so the built-in rules made this proposal. Check it before you confirm.",
+      "saved": "You confirmed this mapping for the same file before, so it was reused without asking the AI. Check it before you confirm."
+    },
+    "details": "Technical notes ({{n}})",
+    "missingRequired": "These required columns are not mapped yet: {{columns}}. Pick the file column for each one.",
+    "duplicates": "These columns are chosen for more than one file column: {{columns}}. Keep one and set the others to \"Ignore\".",
+    "emptyFix": "Some value fixes have an empty target: {{values}}. Type the correct name or remove the fix.",
+    "columnsTitle": "Columns",
+    "columnsHint": "Which column in the file holds which field. Required fields are marked.",
+    "headerInFile": "Column in file",
+    "readAs": "Read as",
+    "readAsFor": "Read column {{header}} as",
+    "required": "Required",
+    "requiredOption": "{{column}} (required)",
+    "ignore": "Ignore this column",
+    "ignored": "Not used",
+    "example": "e.g. {{value}}",
+    "duplicateRow": "Chosen for another column too.",
+    "formatsTitle": "Dates and numbers",
+    "dateFormat": "Date format",
+    "dateFormatHint": "Check this when days and months could be swapped (03/09 = 3 September or 9 March?).",
+    "dateFormats": {
+      "iso": "Year-month-day (2026-10-31)",
+      "dmySlash": "Day/month/year (31/10/2026)",
+      "dmyDash": "Day-month-year (31-10-2026)",
+      "mdySlash": "Month/day/year (10/31/2026)"
+    },
+    "numberFormat": "Number format",
+    "numberFormatHint": "How thousands and decimals are written in the amount columns.",
+    "numberFormats": {
+      "plain": "Plain digits (1725966000)",
+      "id": "Indonesian (1.725.966.000 and 1.234,5)",
+      "en": "English (1,725,966,000 and 1,234.5)"
+    },
+    "valuesTitle": "Spelling fixes",
+    "valuesHint": "Each name on the left becomes the name on the right in every row. Names not listed stay as they are.",
+    "noFixes": "No spelling fixes proposed. Every name is used as written.",
+    "fixTarget": "Replace \"{{from}}\" with",
+    "rows_one": "{{n}} row",
+    "rows_other": "{{n}} rows",
+    "rowsUnknown": "row count not available",
+    "removeFix": "Remove fix for \"{{from}}\"",
+    "addTitle": "Add a fix",
+    "addColumn": "Column",
+    "addFrom": "Name in file",
+    "addTo": "Correct name",
+    "pick": "Choose...",
+    "valueWithRows": "{{value}} ({{n}})",
+    "add": "Add fix",
+    "geoTitle": "Branch locations for the map",
+    "geoHint": "Proposed by the AI for branches missing from the built-in location table. Remove any that look wrong; those branches are listed under \"Not yet on map\".",
+    "geoNone": "No new locations needed: every branch is in the built-in table, or will be listed under \"Not yet on map\".",
+    "geoPoint": "Latitude {{lat}}, longitude {{lon}}",
+    "removeGeo": "Remove location for {{branch}}",
+    "confirm": "Confirm mapping",
+    "applying": "Cleaning data...",
+    "notice": {
+      "llm_not_configured": "The AI is not set up, so the built-in rules were used.",
+      "llm_invalid": "The AI answered twice but its answer did not pass the checks, so the built-in rules were used.",
+      "llm_failed": "The AI could not be reached, so the built-in rules were used.",
+      "mapping_reused": "This file matches a mapping you confirmed before."
+    }
+  },
+  "quality": {
+    "title": "What was found in your data",
+    "description": "Every change made to the file, so the totals can be traced back. Confirm to use this data.",
+    "loading": "Loading the data quality report...",
+    "loadErrorTitle": "The report could not be loaded",
+    "rowsCaption": "rows read, rows used for the numbers",
+    "to": "becomes",
+    "none": "None",
+    "more": "and {{n}} more",
+    "rowNumbers": "Rows in the file: {{rows}}",
+    "trimmed": {
+      "title": "Extra spaces removed",
+      "body": "Spaces before or after a name are dropped, so \"Jawa Barat \" and \"Jawa Barat\" count as one."
+    },
+    "fixed": {
+      "title": "Names corrected",
+      "body": "The spelling fixes you confirmed, applied to every row."
+    },
+    "duplicates": {
+      "title": "Duplicate rows removed",
+      "body": "Rows that are identical in every column are counted once."
+    },
+    "returns": {
+      "title": "Return lines",
+      "value": "{{rows}}, {{amount}}",
+      "body": "Returns are kept as negative sales, so net sales already subtract them."
+    },
+    "shared": {
+      "title": "Names used by different outlets",
+      "body": "Outlets are counted by ID, never by name, so these stay separate.",
+      "item": "\"{{name}}\": {{ids}}"
+    },
+    "variants": {
+      "title": "Outlets with several spellings",
+      "body": "One outlet ID written with different names. The most frequent name is shown.",
+      "item": "{{id}}: {{names}}"
+    },
+    "salesman": {
+      "title": "Rows without a salesman",
+      "body": "Shown as \"Unassigned\" so the sales still count."
+    },
+    "arithmetic": {
+      "title": "Rows where the maths does not add up",
+      "body": "Quantity × price differs from gross, or gross minus discount differs from net. The net amount in the file is kept as the source of truth.",
+      "gross": "Row {{row}}: quantity × price is not the gross amount",
+      "net": "Row {{row}}: gross minus discount is not the net amount"
+    },
+    "unmapped": {
+      "title": "Names not in the confirmed mapping",
+      "body": "Shown as \"Unmapped\" until you add them to the mapping."
+    },
+    "unparseable": {
+      "title": "Rows that could not be read",
+      "body": "A required value (date, region, outlet, brand or net amount) was empty or unreadable, so the row is left out of every number.",
+      "item": "Row {{row}}, {{column}}: \"{{value}}\""
+    },
+    "missingColumns": {
+      "title": "Optional columns not in the file",
+      "body": "Views that need these columns are hidden with a note."
+    },
+    "confirm": "Confirm and use this data",
+    "confirming": "Saving..."
+  },
+  "telegram": {
+    "title": "Send the summary to Telegram",
+    "description": "Sales Pulse sends the summary as a Telegram message from your own bot. A test message has to arrive before you finish.",
+    "guide": {
+      "create": {
+        "title": "Create a bot",
+        "body": "Open <bot>@BotFather</bot>, send <code>/newbot</code> and follow the questions. Copy the token it gives you."
+      },
+      "start": {
+        "title": "Start a chat with it",
+        "body": "Open your new bot and press Start. For a team group, add the bot to the group instead."
+      },
+      "chatId": {
+        "title": "Get the chat ID",
+        "body": "Send any message to the bot, then open <code>api.telegram.org/bot[TOKEN]/getUpdates</code> in a browser. The number after <code>\"chat\":{\"id\":</code> is the chat ID. Group IDs start with a minus sign."
+      }
+    },
+    "token": "Bot token",
+    "tokenHint": "Stored encrypted on this computer only.",
+    "tokenSaved": "Token saved",
+    "tokenSavedHint": "A token is saved. Leave this blank to keep it, or paste a new one to replace it.",
+    "chatId": "Chat ID",
+    "chatIdHint": "A number, or @channelname for a public channel.",
+    "send": "Send test message",
+    "sending": "Sending...",
+    "sent": "Test message sent. Check Telegram.",
+    "errors": {
+      "token": "Paste the bot token from BotFather.",
+      "chat": "Enter the chat ID."
+    }
+  },
+  "settings": {
+    "tabs": {
+      "language": "Language",
+      "llm": "AI",
+      "data": "Data",
+      "telegram": "Telegram",
+      "credentials": "Credentials"
+    },
+    "dataDoneTitle": "New data is active",
+    "dataDoneBody": "The dashboard now uses this file. Close Settings to see it.",
+    "uploadAnother": "Upload another file"
+  },
+  "credentials": {
+    "title": "Saved credentials",
+    "description": "The API key, bot token and push token are encrypted on this computer and never sent to the browser.",
+    "llm": "AI connection",
+    "llmSaved": "{{model}} at {{host}}",
+    "telegram": "Telegram",
+    "telegramSaved": "Chat {{chatId}}",
+    "notSaved": "Not saved",
+    "scope": "Encryption keeps these secrets out of the project folder, logs and browser. It does not protect them from someone who can sign in to this computer account.",
+    "forget": "Forget credentials",
+    "confirmTitle": "Forget all credentials?",
+    "confirmBody": "This deletes the API key, the bot token and the push token from this computer. Sales Pulse will ask for the AI connection and Telegram again before showing the dashboard, and scripts using the push token will stop working.",
+    "confirm": "Forget credentials",
+    "forgetting": "Deleting...",
+    "done": "Credentials deleted. Set up the AI connection and Telegram again to use the dashboard."
+  },
+  "errors": {
+    "any": {
+      "serverDown": "Cannot reach the Sales Pulse server. Check that the app is still running on this computer, then try again.",
+      "network": "Could not reach that address. Check the URL and your internet connection.",
+      "timeout": "No answer within 30 seconds. Try again, or check the address.",
+      "bad_response": "The answer came back in an unexpected format.",
+      "bad_request": "The request was rejected. Check the values and try again.",
+      "unauthorized": "The credentials were rejected.",
+      "not_found": "Nothing was found at that address.",
+      "invalid_body": "Some values are missing or in the wrong format. Check the fields and try again.",
+      "invalid_json": "Some values are missing or in the wrong format. Check the fields and try again.",
+      "payload_too_large": "The file is larger than 20 MB. Export a shorter period or fewer columns.",
+      "forbidden_origin": "This request was blocked because it did not come from the Sales Pulse page. Reload the page and try again.",
+      "forbidden_host": "This request was blocked because it did not come from the Sales Pulse page. Reload the page and try again.",
+      "internal": "Something went wrong on the Sales Pulse server. Try again; if it keeps failing, restart the app.",
+      "unknown": "Something went wrong. Try again in a moment."
+    },
+    "llm": {
+      "unauthorized": "The provider rejected the API key. Copy it again and check it belongs to this provider.",
+      "not_found": "The provider could not find this address or model. Check the base URL and the model name.",
+      "timeout": "The provider did not answer within 30 seconds. Try again, or pick a faster model.",
+      "network": "Could not reach the provider. Check the base URL and your internet connection.",
+      "bad_response": "The provider answered, but the reply could not be used. See the technical detail below.",
+      "bad_request": "The provider rejected the request. Usually the model name is wrong or not available for this key.",
+      "missing_api_key": "Enter the API key. A saved key is only reused for the same address.",
+      "provider_error": "The provider (or the model behind it) failed to answer. Try again, or pick another model."
+    },
+    "telegram": {
+      "unauthorized": "Telegram rejected the bot token. Copy it again from BotFather.",
+      "chat_not_found": "Chat not found. Check the chat ID, and send /start to your bot first.",
+      "bot_blocked": "The bot is not allowed to write to this chat. Open the bot and press Start (or add it to the group), then try again.",
+      "bad_request": "Telegram rejected the message. Check the chat ID.",
+      "network": "Could not reach Telegram. Check the internet connection.",
+      "timeout": "Telegram did not answer in time. Try again.",
+      "bad_response": "Telegram sent an unexpected answer. Try again.",
+      "missing_bot_token": "Paste the bot token from BotFather."
+    },
+    "data": {
+      "bad_csv": "This file could not be read as a CSV. Export the report again as CSV (comma, semicolon or tab separated).",
+      "missing_file": "Choose a CSV file first.",
+      "bad_multipart": "The upload was cut off or garbled. Choose the file again.",
+      "empty_body": "The file is empty.",
+      "payload_too_large": "The file is larger than 20 MB. Export a shorter period or fewer columns."
+    },
+    "mapping": {
+      "upload_not_found": "This upload has expired, probably because the app restarted. Go back and upload the file again.",
+      "missing_required_columns": "Some required columns are not mapped yet. Pick a file column for each required field.",
+      "no_valid_rows": "No row could be read with this mapping. Check the date and number formats and the required columns.",
+      "unmapped_values": "Some names are not in the mapping yet. Add a fix for them."
+    },
+    "quality": {
+      "no_dataset": "No cleaned data was found. Go back and confirm the mapping again."
+    },
+    "push": {
+      "unauthorized": "The push token could not be loaded. Reload the page and try again."
+    }
+  },
+  "columns": {
+    "date": "Date",
+    "invoice_no": "Invoice number",
+    "region": "Region",
+    "branch": "Branch",
+    "outlet_id": "Outlet ID",
+    "outlet_name": "Outlet name",
+    "outlet_type": "Outlet type",
+    "salesman": "Salesman",
+    "brand": "Brand",
+    "sku": "SKU",
+    "qty_carton": "Quantity (cartons)",
+    "price_per_carton_idr": "Price per carton (IDR)",
+    "gross_sales_idr": "Gross sales (IDR)",
+    "discount_idr": "Discount (IDR)",
+    "net_sales_idr": "Net sales (IDR)"
+  }
+}
